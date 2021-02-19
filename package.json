@@ -1,0 +1,21 @@
+{
+  "name": "express-my-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/narzantaria/express-my-app.git",
+  "author": "Nar Zantaria <narzantaria@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon index"
+  },
+  "dependencies": {
+    "config": "^3.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
