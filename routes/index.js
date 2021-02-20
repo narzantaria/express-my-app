@@ -11,4 +11,10 @@ router.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
+router.get('/addhero', (req, res) => {
+  // res.send("Shutruk-Nahhunte!!!");
+  res.render("addhero");
+  // res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
+
 module.exports = router;

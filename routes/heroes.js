@@ -3,6 +3,22 @@ const mysql = require('mysql');
 const { db } = require('../config/db');
 const router = express.Router();
 
+router.post('/del', (req, res) => {
+  let con = mysql.createConnection(db);
+  con.connect(function (err) {
+    if (err) throw err;
+  });
+  var SQL_DELETE = `DELETE FROM heroes WHERE _id = ${req.body._id}`;
+  con.query(SQL_DELETE, function (err, data) {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Server Error');
+    }
+    con.end();
+    res.redirect("/heroes");
+  });
+});
+
 router.post('/', async (req, res) => {
   try {
     let con = mysql.createConnection(db);
@@ -28,13 +44,29 @@ router.post('/', async (req, res) => {
       con.query(SQL_INSERT, function (err, result) {
         if (err) throw err;
         con.end();
-        res.send("Data inserted");
+        res.redirect("/heroes");
       });
     });
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
   }
+});
+
+router.get('/:id', (req, res) => {
+  let con = mysql.createConnection(db);
+  con.connect(function (err) {
+    if (err) throw err;
+  });
+  let sql = `SELECT * FROM heroes WHERE _id = ${req.params.id}`;
+  con.query(sql, function (err, data, fields) {
+    if (err) {
+      console.error(err);
+      res.status(500).render("error");
+    }
+    con.end();
+    res.render("hero", { data: data[0] });
+  });
 });
 
 router.get('/', (req, res) => {
@@ -46,14 +78,14 @@ router.get('/', (req, res) => {
   con.query(sql, function (err, data, fields) {
     if (err) {
       console.error(err);
-      res.status(500).render("heroes", { data: [{ "name": 'Server Error' }] });
+      res.status(500).render("error");
     }
     con.end();
     res.render("heroes", { data: data });
   });
 });
 
-router.patch('/:id', (req, res) => {
+router.post('/:id', (req, res) => {
   let con = mysql.createConnection(db);
   con.connect(function (err) {
     if (err) throw err;
@@ -76,11 +108,11 @@ router.patch('/:id', (req, res) => {
         res.status(500).send('Server Error');
       }
       con.end();
-      res.json(data);
+      res.redirect(`/heroes/${req.params.id}`);
     });
   } else {
     con.end();
-    res.json({});
+    res.redirect("/heroes");
   }
 });
 

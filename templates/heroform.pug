@@ -1,0 +1,12 @@
+mixin heroform(action, method, data)
+  form(action=action method=method)
+    label(for='name') First name:
+    input#name(type='text' name='name' value=data.name)
+    br
+    label(for='race') Last name:
+    input#race(type='text' name='race' value=data.race)
+    br
+    label(for='date') Last name:
+    input#date(type='date' name='date' value=new Date(data.date).toISOString().slice(0,10))
+    br
+    button(id="Hero_Btn" type='submit') Save

@@ -6,5 +6,5 @@ html(lang='en')
   body
     include header
     hr
-    +heroform(`/heroes/${data._id}`, 'post', data)
-    script(src='/js/updHero.js')
+    h1 Добавить
+    +heroform('/heroes', 'post', {date: new Date()})
