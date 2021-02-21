@@ -3,14 +3,12 @@ const path = require('path');
 const pug = require('pug');
 const cors = require('cors');
 const config = require('config');
-const mysql = require('mysql');
-const { db } = require('./config/db');
 
 const routes = require('./routes');
 
 const app = express();
 
-const PORT = config.get('PORT');
+const PORT = config.get('PORT' || 5000);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
