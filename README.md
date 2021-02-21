@@ -10,11 +10,11 @@ Node/express app using mysql, with CREATE, READ, UPDATE and DELETE functionality
 # Used technologies
 
 <div>
-  <img src="/light/src/img/node.png" alt="Node.js" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  <img src="/light/src/img/express.png" alt="Express.js" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  <img src="/light/src/img/mysql.png" alt="MySQL" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  <img src="/light/src/img/pug.png" alt="Pug template engine" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  <img src="/light/src/img/sass.png" alt="Sass" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/files/node.png" alt="Node.js" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/files/express.png" alt="Express.js" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/files/mysql.png" alt="MySQL" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/files/pug.png" alt="Pug template engine" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/files/sass.png" alt="Sass" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </div>
 
 ## Installation
