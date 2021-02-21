@@ -1,0 +1,22 @@
+#Top_Nav {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  li {margin-left: 15px;}
+  li:first-child {margin: 0;}
+}
+
+.line {
+  display: flex;
+  h3 {margin: 10px 0;}
+  & > * {width: 50%;}
+  button {
+    float: right;
+    background-color: brown;
+    padding: 10px;
+    border-radius: 15px;
+    line-height: 0.65;
+  }
+}
+
+.hidden {display: none !important;}

@@ -1,10 +1,29 @@
 # express-my-app
 Node/express app using mysql, with CREATE, READ, UPDATE and DELETE functionality
 
-First, create database with MySQL or PhpMyAdmin
+## 📝 Features
+- [x] Create hero
+- [x] See the list of heroes
+- [x] Update hero
+- [x] Delete hero
 
-### Схема проекта (удалить после)
+# Used technologies
 
-Роуты: /, heroes, heroes/:id
+<div>
+  <img src="/light/src/img/node.png" alt="Node.js" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/light/src/img/express.png" alt="Express.js" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/light/src/img/mysql.png" alt="MySQL" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/light/src/img/pug.png" alt="Pug template engine" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <img src="/light/src/img/sass.png" alt="Sass" height="100" width="100"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</div>
 
-Шаблоны: head, header, items, item
+## Installation
+
+Download the repository in your projects folder (you can use `npm install` instead of `yarn`):
+```
+git clone https://github.com/narzantaria/express-my-app
+cd express-my-app
+yarn
+```
+1. Before starting the application you need to create a database in PhpMyAdmin or MySQL: "CREATE DATABASE your_database_name". 
+2. Then correct the fields in config/default.json file with your details
