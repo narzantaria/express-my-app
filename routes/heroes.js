@@ -19,38 +19,33 @@ router.post('/del', (req, res) => {
   });
 });
 
-router.post('/', async (req, res) => {
-  try {
-    let con = mysql.createConnection(db);
-    con.connect(function (err) {
-      if (err) throw err;
-    });
-    let SQL_TABLE = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = \"heroes\"";
-    con.query(SQL_TABLE, function (err, result) {
-      if (err) throw err;
-      if (result.length <= 0) {
-        let SQL_CREATE_TABLE = `CREATE TABLE heroes (
+router.post('/', (req, res) => {
+  let con = mysql.createConnection(db);
+  con.connect(function (err) {
+    if (err) throw err;
+  });
+  let SQL_TABLE = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = \"heroes\"";
+  con.query(SQL_TABLE, function (err, result) {
+    if (err) throw err;
+    if (!result.length) {
+      let SQL_CREATE_TABLE = `CREATE TABLE heroes (
           _id BIGINT(20) NOT NULL AUTO_INCREMENT, 
           name VARCHAR(255) NOT NULL,
           race VARCHAR(255) NOT NULL,
           date DATETIME NOT NULL,
           PRIMARY KEY (_id)
         )`;
-        con.query(SQL_CREATE_TABLE, function (err, result) {
-          if (err) throw err;
-        });
-      }
-      let SQL_INSERT = `INSERT INTO heroes (name, race, date) VALUES (\"${req.body.name}\", \"${req.body.race}\", \"${new Date(req.body.date).toISOString().slice(0, 19).replace('T', ' ')}\")`;
-      con.query(SQL_INSERT, function (err, result) {
+      con.query(SQL_CREATE_TABLE, function (err, result) {
         if (err) throw err;
-        con.end();
-        res.redirect("/heroes");
       });
+    }
+    let SQL_INSERT = `INSERT INTO heroes (name, race, date) VALUES (\"${req.body.name}\", \"${req.body.race}\", \"${new Date(req.body.date).toISOString().slice(0, 19).replace('T', ' ')}\")`;
+    con.query(SQL_INSERT, function (err, result) {
+      if (err) throw err;
+      con.end();
+      res.redirect("/heroes");
     });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
-  }
+  });
 });
 
 router.get('/:id', (req, res) => {
@@ -74,14 +69,26 @@ router.get('/', (req, res) => {
   con.connect(function (err) {
     if (err) throw err;
   });
-  let sql = "SELECT * FROM heroes";
-  con.query(sql, function (err, data, fields) {
+  let SQL_TABLE = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = \"heroes\"";
+  con.query(SQL_TABLE, function (err, result) {
     if (err) {
       console.error(err);
+      con.end();
       res.status(500).render("error");
+    } else if(!result.length) {
+      con.end();
+      res.render("heroes");
+    } else {
+      let sql = "SELECT * FROM heroes";
+      con.query(sql, function (err, data, fields) {
+        if (err) {
+          console.error(err);
+          res.status(500).render("heroes");
+        }
+        con.end();
+        res.render("heroes", { data: data });
+      });
     }
-    con.end();
-    res.render("heroes", { data: data });
   });
 });
 
@@ -100,7 +107,7 @@ router.post('/:id', (req, res) => {
   if (req.body.date) {
     params = params + (!params.length ? '' : ', ') + `date = \'${new Date(req.body.date).toISOString().slice(0, 19).replace('T', ' ')}\'`;
   }
-  if (params.length > 0) {
+  if (params.length) {
     let SQL_UPDATE = `UPDATE heroes SET ${params} WHERE _id = ${req.params.id}`;
     con.query(SQL_UPDATE, function (err, data) {
       if (err) {

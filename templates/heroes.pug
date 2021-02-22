@@ -7,10 +7,11 @@ html(lang='en')
     h1 Герои
     a(href="/addhero") 
       button Добавить
-    each _ in data
-      .line
-        a(href=`/heroes/${_._id}`)
-          h3=_.name
-        form(action="/heroes/del" method="post")
-          input.hidden(type='text' name='_id' value=_._id)
-          button(type='submit') X
+    if data
+      each _ in data
+        .line
+          a(href=`/heroes/${_._id}`)
+            h3=_.name
+          form(action="/heroes/del" method="post")
+            input.hidden(type='text' name='_id' value=_._id)
+            button(type='submit') X
