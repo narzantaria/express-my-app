@@ -48,6 +48,10 @@ router.post('/', (req, res) => {
   });
 });
 
+router.get('/new', (req, res) => {
+  res.render("addhero");
+});
+
 router.get('/:id', (req, res) => {
   let con = mysql.createConnection(db);
   con.connect(function (err) {

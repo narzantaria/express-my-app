@@ -3,10 +3,10 @@ html(lang='en')
   include head
   body
     include header
-    h1 Герои
+    h1 Heroes
     hr.gold
-    a(href="/addhero") 
-      button#Add_Hero Добавить
+    a(href="/heroes/new") 
+      button#Add_Hero Add new
     if data
       each _ in data
         .line
