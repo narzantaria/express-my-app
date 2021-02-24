@@ -5,6 +5,7 @@ html(lang='en')
   include head
   body
     include header
-    hr
+    h1 Edit hero
+    hr.gold
     +heroform(`/heroes/${data._id}`, 'post', data)
     script(src='/js/updHero.js')

@@ -22,6 +22,6 @@ app.use('/', routes);
 app.use(express.static(path.join(__dirname, 'templates')));
 // app.use(express.static(path.join(__dirname, 'dist')));
 // app.use(express.static(path.join(__dirname, 'manager')));
-// app.use(express.static(path.join(__dirname, 'files')));
+app.use(express.static(path.join(__dirname, 'files')));
 
 app.listen(PORT, _ => console.log(`Server started at port ${PORT}...`));

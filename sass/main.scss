@@ -1,9 +1,69 @@
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Merriweather', serif;
+// font-family: 'Noto Sans', sans-serif;
+// font-family: 'Lora', serif;
+// font-family: 'PT Serif', serif;
+// font-family: 'Arimo', sans-serif;
+// font-family: 'Play', sans-serif;
+// font-family: 'Ubuntu', sans-serif;
+// font-family: 'Ubuntu Condensed', sans-serif;
+// font-family: 'Alegreya Sans', sans-serif;
+// font-family: 'Tinos', serif;
+// font-family: 'PT Mono', monospace;
+// font-family: 'Jura', sans-serif;
+// font-family: 'Cousine', monospace;
+// font-family: 'Anonymous Pro', monospace;
+// font-family: 'Spectral', serif;
+// font-family: 'Arsenal', sans-serif;
+// font-family: 'Exo 2', sans-serif;
+// font-family: 'Fira Sans', sans-serif;
+// font-family: 'M PLUS 1p', sans-serif; 
+// font-family: 'Scada', sans-serif;
+// font-family: 'Inter', sans-serif; 
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Montserrat', sans-serif; 
+// font-family: 'PT Sans', sans-serif; 
+// font-family: 'IBM Plex Sans', sans-serif;
+// font-family: 'Comfortaa', cursive; 
+// font-family: 'Fira Code', monospace;
+// font-family: 'Andika', sans-serif;
+// font-family: 'Ubuntu Mono', monospace;
+// font-family: 'Manrope', sans-serif;
+// font-family: 'Fira Mono', monospace;
+// font-family: 'Forum', cursive;
+
+body {
+  font-family: 'Arsenal', sans-serif;
+}
+header, #Sidenav, button {
+	font-family: 'Anonymous Pro', monospace; 
+}
+
+h1, h2, h3, h4, h5, h6 {font-weight: 500;}
+
+button {background-color: #007965;}
+
+header {
+  padding: 10px 15px;
+  background-color: #5b6d5b;
+  border-radius: 8px;
+  a {color: #faf3e0;}
+  .material-icons {margin-right: 7px;}
+}
+
+.gold {border-top: 1px solid #da723c;}
+
 #Top_Nav {
+  margin: 0;
   list-style-type: none;
   padding-left: 0;
   display: flex;
   li {margin-left: 15px;}
   li:first-child {margin: 0;}
+  a {
+    display: flex;
+    margin-right: 15px;
+  }
 }
 
 .line {
@@ -13,10 +73,32 @@
   button {
     float: right;
     background-color: brown;
-    padding: 10px;
+    padding: 3px;
     border-radius: 15px;
     line-height: 0.65;
+    margin-top: 8px;
   }
 }
 
 .hidden {display: none !important;}
+
+#Add_Hero {margin-top: 13px;}
+
+#Hero_Form {margin-top: 13px;}
+
+#Banners {
+  h3 {margin-bottom: 25px;}
+  img {
+    max-width: 135px;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;  
+    li {}
+    li:first-child {}
+    li:last-child {} 
+  } 
+}

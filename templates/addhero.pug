@@ -5,6 +5,6 @@ html(lang='en')
   include head
   body
     include header
-    hr
     h1 Добавить
+    hr.gold
     +heroform('/heroes', 'post', {date: new Date()})

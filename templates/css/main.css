@@ -1,4 +1,29 @@
+body {
+  font-family: 'Arsenal', sans-serif; }
+
+header, #Sidenav, button {
+  font-family: 'Anonymous Pro', monospace; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; }
+
+button {
+  background-color: #007965; }
+
+header {
+  padding: 10px 15px;
+  background-color: #5b6d5b;
+  border-radius: 8px; }
+  header a {
+    color: #faf3e0; }
+  header .material-icons {
+    margin-right: 7px; }
+
+.gold {
+  border-top: 1px solid #da723c; }
+
 #Top_Nav {
+  margin: 0;
   list-style-type: none;
   padding-left: 0;
   display: flex; }
@@ -6,6 +31,9 @@
     margin-left: 15px; }
   #Top_Nav li:first-child {
     margin: 0; }
+  #Top_Nav a {
+    display: flex;
+    margin-right: 15px; }
 
 .line {
   display: flex; }
@@ -16,9 +44,29 @@
   .line button {
     float: right;
     background-color: brown;
-    padding: 10px;
+    padding: 3px;
     border-radius: 15px;
-    line-height: 0.65; }
+    line-height: 0.65;
+    margin-top: 8px; }
 
 .hidden {
   display: none !important; }
+
+#Add_Hero {
+  margin-top: 13px; }
+
+#Hero_Form {
+  margin-top: 13px; }
+
+#Banners h3 {
+  margin-bottom: 25px; }
+
+#Banners img {
+  max-width: 135px; }
+
+#Banners ul {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+  flex-wrap: wrap;
+  justify-content: space-between; }

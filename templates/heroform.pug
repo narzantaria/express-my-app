@@ -1,5 +1,5 @@
 mixin heroform(action, method, data)
-  form(action=action method=method)
+  form#Hero_Form(action=action method=method)
     label(for='name') First name:
     input#name(type='text' name='name' value=data.name)
     br

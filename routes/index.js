@@ -6,6 +6,7 @@ const heroes = require('./heroes');
 router.use('/heroes', heroes);
 
 router.get('/', (req, res) => {
+  console.log(__dirname);
   res.render("main");
 });
 

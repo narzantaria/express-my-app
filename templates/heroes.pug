@@ -3,10 +3,10 @@ html(lang='en')
   include head
   body
     include header
-    hr
     h1 Герои
+    hr.gold
     a(href="/addhero") 
-      button Добавить
+      button#Add_Hero Добавить
     if data
       each _ in data
         .line
@@ -14,4 +14,5 @@ html(lang='en')
             h3=_.name
           form(action="/heroes/del" method="post")
             input.hidden(type='text' name='_id' value=_._id)
-            button(type='submit') X
+            button(type='submit')
+              i.material-icons close
