@@ -2,6 +2,6 @@
   "PORT": 5000,
   "HOST": "localhost",
   "DATABASE": "expressmyapp",
-  "SQL_USER": "shutruk",
-  "SQL_PASSWORD": "82gsu92x"
+  "SQL_USER": "your_mysql_user",
+  "SQL_PASSWORD": "your_mysql_password"
 }
